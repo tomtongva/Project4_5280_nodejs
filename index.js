@@ -57,7 +57,7 @@ const jwtValidateUserMiddleware = (req, res, next) => {
 
 app.use(express.urlencoded());
 app.use(express.json());
-app.post("/api/auth", async (req, res) => {
+app.get("/api/auth", async (req, res) => {
 
     let user = await findUser(req.body.email, req.body.password);
     console.log("found " + user);
