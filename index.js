@@ -5,30 +5,8 @@ const jwt  = require("jsonwebtoken");
 const jwtSecret = "Group3KeyForJWT";
 const headerTokenKey = "x-jwt-token";
 
-const { networkInterfaces } = require('os');
-
-const nets = networkInterfaces();
-const results = Object.create(null); // Or just '{}', an empty object
-
 app.listen(port, () => {
-	for (const name of Object.keys(nets)) {
-        for (const net of nets[name]) {
-            // Skip over non-IPv4 and internal (i.e. 127.0.0.1) addresses
-            // 'IPv4' is in Node <= 17, from 18 it's a number 4 or 6
-            const familyV4Value = typeof net.family === 'string' ? 'IPv4' : 4
-            if (net.family === familyV4Value && !net.internal) {
-                if (!results[name]) {
-                    results[name] = [];
-                }
-                results[name].push(net.address);
-            }
-        }
-    }
-    console.log(results);
-
-    //var os = require('os');
-    //console.log('Listening at http://' + os.hostname + ':${port}')
-    console.log(`Listening on port ${port}`);
+    console.log(`Listening at http://localhost:${port}`)
 });
 
 const jwtValidateUserMiddleware = (req, res, next) => {
@@ -146,9 +124,7 @@ async function createUser(email, password, firstName, lastName, gender, city) {
 
 async function findUser(email, password) {
     try {
-		console.log("waiting to connect to db");
         await client.connect();
-		console.log("connected to db and looking for " + email + " " + password);
 
         var user;
         if (password != undefined)
