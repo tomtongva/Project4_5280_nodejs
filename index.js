@@ -27,7 +27,7 @@ app.listen(port, () => {
         }
     }
     console.log(results);
-	console.log(${port});
+	console.log(`${port}`);
 });
 
 const jwtValidateUserMiddleware = (req, res, next) => {
