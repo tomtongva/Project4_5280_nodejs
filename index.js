@@ -5,6 +5,11 @@ const jwt  = require("jsonwebtoken");
 const jwtSecret = "Group3KeyForJWT";
 const headerTokenKey = "x-jwt-token";
 
+const { networkInterfaces } = require('os');
+
+const nets = networkInterfaces();
+const results = Object.create(null); // Or just '{}', an empty object
+
 app.listen(port, () => {
 	for (const name of Object.keys(nets)) {
         for (const net of nets[name]) {
