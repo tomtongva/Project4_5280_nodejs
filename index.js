@@ -28,6 +28,7 @@ app.listen(process.env.PORT || port, () => {
     }
     console.log(results);
 	console.log(`${port}`);
+	console.log(`${process.env.PORT}`);
 });
 
 const jwtValidateUserMiddleware = (req, res, next) => {
