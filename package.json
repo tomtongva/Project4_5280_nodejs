@@ -1,7 +1,6 @@
 {
-  "name": "Project4_5280_nodejs",
+  "name": "project4_5280_nodejs",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,5 +15,14 @@
   },
   "engines": {
     "node": "16.17.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomtongva/Project4_5280_nodejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tomtongva/Project4_5280_nodejs/issues"
+  },
+  "homepage": "https://github.com/tomtongva/Project4_5280_nodejs#readme",
+  "description": ""
 }
