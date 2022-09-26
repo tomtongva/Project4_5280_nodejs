@@ -55,6 +55,10 @@ const jwtValidateUserMiddleware = (req, res, next) => {
     }
 }
 
+app.get('/', (req, res) => { //can declare get our put route, first param is the route, second param is the function that is executed
+    res.send("Hello world");
+});
+
 app.use(express.urlencoded());
 app.use(express.json());
 app.post("/api/auth", async (req, res) => {
