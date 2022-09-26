@@ -10,7 +10,7 @@ const { networkInterfaces } = require('os');
 const nets = networkInterfaces();
 const results = Object.create(null); // Or just '{}', an empty object
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`Listening at http://localhost:${port}`)
 	
 	for (const name of Object.keys(nets)) {
